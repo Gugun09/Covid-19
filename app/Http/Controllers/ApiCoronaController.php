@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -50,7 +51,7 @@ class ApiCoronaController extends Controller
 		])->get('https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats');
 
 		$data = $response['data']['covid19Stats'];
-		return \DataTables($data)->toJson();
+		return DataTables($data)->toJson();
 
     }
 
@@ -58,14 +59,14 @@ class ApiCoronaController extends Controller
     {
     	$kasus = Http::get('https://indonesia-covid-19.mathdro.id/api/kasus');
     	$data = $kasus['data']['nodes'];
-    	return \DataTables($data)->toJson();
+    	return DataTables($data)->toJson();
     }
 
     public function provinsi()
     {
     	$provinsi = Http::get('https://indonesia-covid-19.mathdro.id/api/provinsi');
 		$data = $provinsi['data'];
-		return \DataTables($data)->toJson();
+		return DataTables($data)->toJson();
     }
 
 
