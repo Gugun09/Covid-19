@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Tes</title>
+	<script type="text/javascript" src="{{ asset('assets/js/setahun.js') }}"></script>
 	<style type="text/css">
 		/* CSS */
 
@@ -73,6 +74,21 @@ ul.active{
 	</style>
 </head>
 <body>
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>Jam (Aktif) With JavaScript</title>
+</head>
+<body>
+	<!-- Menampilkan Jam (Aktif) -->
+	<div id="clock"></div>
+
+		<!-- Menampilkan Hari, Bulan dan Tahun -->
+		<br>
+	    <script language='JavaScript'>document.write(tanggallengkap);</script>
+
+</body>
+</html>
 	<section>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -141,6 +157,6 @@ ul.active{
 	<br>
 	
 	=> <span id="link"></span>
-
+<script type="text/javascript" src="{{ asset('assets/js/waktu.js') }}"></script>
 </body>
 </html>

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'ApiCoronaController@index');
+Route::get('/tutorial', 'ApiCoronaController@tutorial');
 Route::get('/global', 'ApiCoronaController@global');
 Route::get('/instagram', 'ApiCoronaController@instagram');
 

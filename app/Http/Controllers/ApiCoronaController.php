@@ -101,4 +101,10 @@ class ApiCoronaController extends Controller
 
     	return view('instagram', compact('username','foto','nama_lengkap','bio','website','count','photos'));
     }
+
+
+    public function tutorial()
+    {
+    	return view('positif');
+    }
 }

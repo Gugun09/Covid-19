@@ -25,7 +25,7 @@
         <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('assets/css/icons.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="{{ asset('assets/js/tahun.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/js/setahun.js') }}"></script>
 
     </head>
 
@@ -118,7 +118,7 @@
                                 <li class="list-inline-item dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
                                     aria-haspopup="false" aria-expanded="false">
-                                        <img src="{{asset('assets/images/users/avatar-6.jpg')}}" alt="user" class="rounded-circle">
+                                        <img src="{{asset('assets/images/user/gugun.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="d-none d-md-inline-block ml-1">Nanda Gunawan </span>
                                     </a>
 
@@ -195,11 +195,7 @@
                                     </ol>
                                 </div>
                                 <div class="col-md-4">
-                                    <center><h3><script type='text/javascript'>
-                                            <!--
-                                            document.write(thisDay + ', ' + day + ' ' + months[month] + ' ' + year);
-                                            //-->
-                                        </script></h3>
+                                    <center><h3><script language='JavaScript'>document.write(tanggallengkap);</script></h3>
                                         <span id="clock"></span></center>
                                 </div>
                                 <div class="col-md-4">
