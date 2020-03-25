@@ -4,9 +4,10 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>Covid 19</title>
-        <meta content="Admin Dashboard" name="description" />
-        <meta content="Themesbrand" name="author" />
+        <title>Kasus Covid-19 Indonesia</title>
+        <meta name="google-site-verification" content="bG5NoQv3C3luq4_TScDj2drpNSPgBD8E3JB4OmA1Gog" />
+        <meta content="Corona Virus" name="description" />
+        <meta content="Kasus Covid19 Indonesia" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App Icons -->
@@ -96,12 +97,12 @@
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
                                     aria-haspopup="false" aria-expanded="false">
                                         <i class="mdi mdi-bell-outline noti-icon"></i>
-                                        <span class="badge badge-info badge-pill noti-icon-badge">3</span>
+                                        <span class="badge badge-info badge-pill noti-icon-badge">1</span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-arrow dropdown-menu-lg">
                                         <!-- item-->
                                         <div class="dropdown-item noti-title">
-                                            <h5>Notification (3)</h5>
+                                            <h5>Notification (1)</h5>
                                         </div>
                                         
 
@@ -227,7 +228,7 @@
                                 <div class="mb-4">
                                     <div class="float-right text-right">
                                         <span class="badge badge-light text-info mt-2 mb-2"> - </span> 
-                                        <p class="text-white-50">From previous period</p>
+                                        <p class="text-white-50">Cegah penularan virus</p>
                                     </div>
                                     
                                     <span><img src="{{asset('assets/images/global/positif.png')}}" alt="" class="flag-img" width="30%"></span>
@@ -248,7 +249,7 @@
                                 <div class="mb-4">
                                     <div class="float-right text-right">
                                         <span class="badge badge-light text-primary mt-2 mb-2"> - </span> 
-                                        <p class="text-white-50">From previous period</p>
+                                        <p class="text-white-50">Jagalah kebersihan</p>
                                     </div>
                                     
                                     <span><img src="{{asset('assets/images/global/sembuh.png')}}" alt="" class="flag-img" width="30%"></span>
@@ -269,7 +270,7 @@
                                 <div class="mb-4">
                                     <div class="float-right text-right">
                                         <span class="badge badge-light text-danger mt-2 mb-2"> - </span> 
-                                        <p class="text-white-50">From previous period</p>
+                                        <p class="text-white-50">Jagan bersedih</p>
                                     </div>
                                     
                                     <span><img src="{{asset('assets/images/global/meninggal.png')}}" alt="" class="flag-img" width="30%"></span>
