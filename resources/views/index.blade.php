@@ -322,7 +322,7 @@
 
                                 <h4 class="mt-0 header-title">Data Kasus Coronavirus di Indonesia Berdasarkan Provinsi</h4>
 
-                                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <table id="myTable2" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
 
                                     <thead>
                                     <tr>
@@ -348,7 +348,7 @@
 
                                 <h4 class="mt-0 header-title">Data Kasus Coronavirus di Indonesia</h4>
 
-                                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <table id="myTable1" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
                                     <tr>
                                         <th>Provinsi</th>
@@ -358,8 +358,6 @@
                                         <th>Wn</th>
                                     </tr>
                                     </thead>
-
-
                                     <tbody>
                                     
                                     </tbody>
@@ -451,7 +449,7 @@
                 ]
             } );
 
-            $('#datatable').DataTable( {
+            $('#myTable1').DataTable( {
                 responsive: true,
                 processing: true,
                 serverside: true,
@@ -465,7 +463,7 @@
                 ]
             });
 
-            $('#datatable').DataTable( {
+            $('#myTable2').DataTable( {
                 responsive: true,
                 processing: true,
                 serverside: true,
