@@ -24,6 +24,7 @@
         <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('assets/css/icons.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="{{ asset('assets/js/tahun.js') }}"></script>
 
     </head>
 
@@ -53,6 +54,7 @@
 
                             <ul class="list-inline flags-dropdown d-none d-lg-block mb-0">
                                 <li class="list-inline-item text-white-50 mr-3">
+                                    <!-- Menampilkan waktu -->
                                     <span class="font-13">Help : +6281357879215</span>
                                 </li>
                                 <li class="list-inline-item dropdown notification-list">
@@ -105,7 +107,8 @@
 
                                         <!-- All-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-all">
-                                            View All
+                                            <a class="btn btn-primary" href="{{ url('instagram') }}"><i class="fa fa-instagram"></i> Instagram</a>
+                                        </a>
                                         </a>
 
                                     </div>
@@ -183,12 +186,20 @@
                     <div class="col-sm-12">
                         <div class="page-title-box">
                             <div class="row align-items-center">
-                                <div class="col-md-8">
+                                <div class="col-md-4">
                                     <h4 class="page-title mb-0">Nanda Gunawan</h4>
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="#">Covid19</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                                     </ol>
+                                </div>
+                                <div class="col-md-4">
+                                    <center><h3><script type='text/javascript'>
+                                            <!--
+                                            document.write(thisDay + ', ' + day + ' ' + months[month] + ' ' + year);
+                                            //-->
+                                        </script></h3>
+                                        <span id="clock"></span></center>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="float-right">
@@ -224,7 +235,7 @@
                             </div>
                             <div class="ml-3 mr-3">
                                 <div class="bg-white p-3 mini-stats-desc rounded">
-                                    <h5 class="float-right mt-0">{{ number_format($global['confirmed']['value'],) }}</h5>
+                                    <h5 class="float-right mt-0">{{ number_format($global['confirmed']['value']) }}</h5>
                                     <h6 class="mt-0 mb-3">Total Positif</h6>
                                     <p class="text-muted mb-0">Orang</p>
                                 </div>
@@ -245,7 +256,7 @@
                             </div>
                             <div class="ml-3 mr-3">
                                 <div class="bg-white p-3 mini-stats-desc rounded">
-                                    <h5 class="float-right mt-0">{{ number_format($global['recovered']['value'],) }}</h5>
+                                    <h5 class="float-right mt-0">{{ number_format($global['recovered']['value']) }}</h5>
                                     <h6 class="mt-0 mb-3">Total Sembuh</h6>
                                     <p class="text-muted mb-0">Orang</p>
                                 </div>
@@ -266,7 +277,7 @@
                             </div>
                             <div class="ml-3 mr-3">
                                 <div class="bg-white p-3 mini-stats-desc rounded">
-                                    <h5 class="float-right mt-0">{{ number_format($global['deaths']['value'],) }}</h5>
+                                    <h5 class="float-right mt-0">{{ number_format($global['deaths']['value']) }}</h5>
                                     <h6 class="mt-0 mb-3">Total Meninggal</h6>
                                     <p class="text-muted mb-0">Orang</p>
                                 </div>
@@ -311,7 +322,7 @@
 
                                 <h4 class="mt-0 header-title">Data Kasus Coronavirus di Indonesia Berdasarkan Provinsi</h4>
 
-                                <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
 
                                     <thead>
                                     <tr>
@@ -321,17 +332,8 @@
                                         <th>Meninggal</th>
                                     </tr>
                                     </thead>
-
-
                                     <tbody>
-                                    @foreach($provinsi as $provinsi)
-                                    <tr>
-                                        <td>{{$provinsi['provinsi']}}</td>
-                                        <td>{{$provinsi['kasusPosi']}}</td>
-                                        <td>{{$provinsi['kasusSemb']}}</td>
-                                        <td>{{$provinsi['kasusMeni']}}</td>
-                                    </tr>
-                                    @endforeach
+
                                     </tbody>
                                 </table>
 
@@ -359,22 +361,39 @@
 
 
                                     <tbody>
-                                    @foreach($data as $data)
-                                    <tr>
-                                        <td>{{ $data['klaster'] }}</td>
-                                        <td>{{ $data['umur'] }}</td>
-                                        <td>{{ $data['gender'] }}</td>
-                                        <td>{{ $data['status'] }}</td>
-                                        <td>{{ $data['wn'] }}</td>
-                                    </tr>
-                                    @endforeach
+                                    
                                     </tbody>
                                 </table>
 
                             </div>
                         </div>
                     </div> <!-- end col -->
-                </div> <!-- end row -->       
+                </div> <!-- end row -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h4 class="mt-0 header-title">Data Kasus Coronavirus DiDunia</h4>
+                                <table id="myTable" class="table table-striped table-bordered" style="width:100%">
+                                    <thead>
+                                    <tr>
+                                        <th>Negara</th>
+                                        <th>Kota</th>
+                                        <th>Positif</th>
+                                        <th>Sembuh</th>
+                                        <th>Meninggal</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div> <!-- end row -->    
             </div> <!-- end container -->
         </div>
 
@@ -416,6 +435,49 @@
         <script src="{{asset('assets/pages/dashboard.js')}}"></script>
         <!-- App js -->
         <script src="{{asset('assets/js/app.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('assets/js/waktu.js') }}"></script>
+        <script>
+            $('#myTable').DataTable( {
+                responsive: true,
+                processing: true,
+                serverside: true,
+                ajax: "{{ route('get.all') }}",
+                columns:[
+                    {data:'country', name: 'country'},
+                    {data:'city', name: 'city'},
+                    {data:'confirmed', name: 'confirmed'},
+                    {data:'recovered', name: 'recovered'},
+                    {data:'deaths', name: 'deaths'},
+                ]
+            } );
 
+            $('#datatable').DataTable( {
+                responsive: true,
+                processing: true,
+                serverside: true,
+                ajax: "{{ route('get.perKasus') }}",
+                columns:[
+                    {data:'klaster', name: 'klaster'},
+                    {data:'umur', name: 'umur'},
+                    {data:'gender', name: 'gender'},
+                    {data:'status', name: 'status'},
+                    {data:'wn', name: 'wn'},
+                ]
+            });
+
+            $('#datatable').DataTable( {
+                responsive: true,
+                processing: true,
+                serverside: true,
+                ajax: "{{ route('get.provinsi') }}",
+                columns:[
+                    {data:'provinsi', name: 'provinsi'},
+                    {data:'kasusPosi', name: 'kasusPosi'},
+                    {data:'kasusSemb', name: 'kasusSemb'},
+                    {data:'kasusMeni', name: 'kasusMeni'},
+                    
+                ]
+            });
+        </script>
     </body>
 </html>

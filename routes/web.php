@@ -15,3 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'ApiCoronaController@index');
 Route::get('/global', 'ApiCoronaController@global');
+Route::get('/instagram', 'ApiCoronaController@instagram');
+
+Route::get('kasus',[
+	'uses' => 'ApiCoronaController@perKasus',
+	'as' => 'get.perKasus'
+]);
+
+Route::get('provinsi',[
+	'uses' => 'ApiCoronaController@provinsi',
+	'as' => 'get.provinsi'
+]);
+
+Route::get('all',[
+	'uses' => 'ApiCoronaController@all',
+	'as' => 'get.all'
+]);
